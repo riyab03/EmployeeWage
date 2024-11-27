@@ -11,20 +11,19 @@ command :   git branch
 d) we have to provide the remote repo link and save it inside a keyword that is origin
 command :   git remote add origin <URL>
 
-Commands for creating new branch :
-git checkout UC1
-to check  : git branch
-git checkout -b UC1
-git branch
+Commands for creating new branch :git checkout -b UC1
+git add .
+git push origin  UC2
+
+to check number of branches : git branch
 
 after writing the code :
-
 git add .
 git commit -m "Added:Feature to check attendance"
 git push origin  UC1
 
 
-for changing the branch : git checkout main
+for changing the branch : git checkout <branchname>
 
 to merge uc1 into main : first go to main branch and then give command :git merge UC1
 to reflect it into github : git push origin main
@@ -33,3 +32,5 @@ git checkout-b version1-Prod
 git merge main
 git checkout main
 
+
+git stash

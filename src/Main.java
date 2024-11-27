@@ -8,7 +8,14 @@ public class Main {
         int i=(r.nextInt(1000))%2;
         switch (i){
             case 1->e1.attendence(true);
-            default->e1.attendence(false);
+            case 2->{
+                e1.attendence(true);
+                System.out.println("Part time today:");
+                e1.normalWorkday=4;
+            }
+            default->{
+                e1.attendence(false);
+            }
         }
         e1.calculateWage();
     }
