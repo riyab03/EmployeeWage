@@ -15,3 +15,4 @@ Commands for creating new branch :
 git checkout UC1
 to check  : git branch
 git checkout -b UC1
+git branch
