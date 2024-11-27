@@ -1,0 +1,17 @@
+1)Git init - it initializes git inside your current folder ( 1 time at the begining of the project)
+2) Stage - Staging
+we have to select the files which we want to keep a track of or te file which is to be used in current situation
+a) the procedure to select files is called staging and to mark the files which needed to be store we use git add<filename>
+to check the status use :git status
+b) for storing the files inside the system : to store the files which are staged/ track we have to use a command called git commit
+but remember always a commit must be follwed by a commit mssg , without commit mssg we are not allowed to save the code.also commit mssg must be meaningful.
+c)next we will be renaming the master to main(1 time)
+command :   git branch -M main
+command :   git branch
+d) we have to provide the remote repo link and save it inside a keyword that is origin
+command :   git remote add origin <URL>
+
+Commands for creating new branch :
+git checkout UC1
+to check  : git branch
+git checkout -b UC1
