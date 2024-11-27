@@ -10,5 +10,6 @@ public class Main {
             case 1->e1.attendence(true);
             default->e1.attendence(false);
         }
+        e1.calculateWage();
     }
 }
