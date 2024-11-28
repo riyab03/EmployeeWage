@@ -1,0 +1,242 @@
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (main)
+$ git init
+Initialized empty Git repository in C:/Users/riyab/IdeaProjects/EmployeeWage/.git/
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (master)
+$ git add .
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/Main.java', LF will be replaced by CRLF the next time Git touches it
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   .idea/.gitignore
+        new file:   .idea/misc.xml
+        new file:   .idea/modules.xml
+        new file:   EmployeeWage.iml
+        new file:   src/Main.java
+        new file:   src/procedures
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .idea/vcs.xml
+
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (master)
+$ git commit -m "first commit"
+[master (root-commit) c6b2403] first commit
+ 7 files changed, 81 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 EmployeeWage.iml
+ create mode 100644 src/Main.java
+ create mode 100644 src/procedures
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (master)
+$ git branch -M main
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (main)
+$ git branch
+* main
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (main)
+$ git remote add origin https://github.com/riyab03/EmployeeWage.git
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (main)
+$ git push -u origin main
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (11/11), 2.02 KiB | 1.01 MiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/riyab03/EmployeeWage.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (main)
+$ git checkout UC1
+error: pathspec 'UC1' did not match any file(s) known to git
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (main)
+$ git branch
+* main
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (main)
+$ git checkout -b UC1
+Switched to a new branch 'UC1'
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC1)
+$ git branch
+* UC1
+  main
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC1)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC1)
+$ git add .
+warning: in the working copy of 'src/Main.java', LF will be replaced by CRLF the next time Git touches it
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC1)
+$ git commit -m "Added:Feature to check attendance"
+[UC1 85ed37c] Added:Feature to check attendance
+ 4 files changed, 34 insertions(+), 1 deletion(-)
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 src/Employee.java
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC1)
+$ git push
+fatal: The current branch UC1 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin UC1
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC1)
+$ git push origin  UC1
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 1.19 KiB | 1.19 MiB/s, done.
+Total 8 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'UC1' on GitHub by visiting:
+remote:      https://github.com/riyab03/EmployeeWage/pull/new/UC1
+remote:
+To https://github.com/riyab03/EmployeeWage.git
+ * [new branch]      UC1 -> UC1
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC1)
+$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        src/procedures
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC1)
+$
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC1)
+$ git merge UC1
+Already up to date.
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC1)
+$ git push origin main
+Everything up-to-date
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC1)
+$ git checkout -b UC2
+Switched to a new branch 'UC2'
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC2)
+$ git add .
+warning: in the working copy of 'src/Main.java', LF will be replaced by CRLF the next time Git touches it
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC2)
+$ git commit -m "ADDED : Features to show daily salary"
+[UC2 9e6c36d] ADDED : Features to show daily salary
+ 3 files changed, 35 insertions(+)
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC2)
+$ git push origin  UC2
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 895 bytes | 895.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+remote:
+remote: Create a pull request for 'UC2' on GitHub by visiting:
+remote:      https://github.com/riyab03/EmployeeWage/pull/new/UC2
+remote:
+To https://github.com/riyab03/EmployeeWage.git
+ * [new branch]      UC2 -> UC2
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC2)
+$ git checkout -b UC3
+Switched to a new branch 'UC3'
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC3)
+$ git add .
+warning: in the working copy of 'src/Main.java', LF will be replaced by CRLF the next time Git touches it
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC3)
+$ git commit -m " added : part time "
+[UC3 a589e64]  added : part time
+ 2 files changed, 16 insertions(+), 8 deletions(-)
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC3)
+$ git push origin  UC3
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 650 bytes | 650.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'UC3' on GitHub by visiting:
+remote:      https://github.com/riyab03/EmployeeWage/pull/new/UC3
+remote:
+To https://github.com/riyab03/EmployeeWage.git
+ * [new branch]      UC3 -> UC3
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC3)
+$ git stash apply
+No stash entries found.
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC3)
+$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        src/procedures
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC3)
+$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        src/procedures
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC3)
+$ git merge UC2
+Already up to date.
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC3)
+$ git merge UC3
+Already up to date.
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC3)
+$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        src/procedures
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC3)
+$ git stash
+Saved working directory and index state WIP on UC3: a589e64  added : part time
+
+riyab@riya MINGW64 ~/IdeaProjects/EmployeeWage (UC3)
+$
