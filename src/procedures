@@ -4,7 +4,7 @@ we have to select the files which we want to keep a track of or te file which is
 a) the procedure to select files is called staging and to mark the files which needed to be store we use git add<filename>
 to check the status use :git status
 b) for storing the files inside the system : to store the files which are staged/ track we have to use a command called git commit
-but remember always a commit must be follwed by a commit mssg , without commit mssg we are not allowed to save the code.also commit mssg must be meaningful.
+but remember always a commit must be followed by a commit mssg , without commit mssg we are not allowed to save the code.also commit mssg must be meaningful.
 c)next we will be renaming the master to main(1 time)
 command :   git branch -M main
 command :   git branch
@@ -34,3 +34,41 @@ git checkout main
 
 
 git stash
+
+
+
+commands:
+1) git init (1 time command)
+2) git add <filename>
+for checking status type: git status
+3)git commit -m "first commit"
+3) git branch -M main
+4) git branch
+5) git remote add origin <URL>
+6)git push -u origin main
+7) Commands for creating new branch :
+    git checkout -b <branchname>
+    git branch ( for checking number of branches and the current branch you are working in)
+    git add .
+    git commit -m "mssg for whatever you have added"
+    git push origin  <branchname>
+8)to check number of branches : git branch
+9)to merge branches into main : first go to main branch ( type : git checkout main)  then type ( git merge UC1 ).
+  to reflect it into github( remote repo) type : git push origin main
+
+
+
+
+GIT : HOW TO WRITE A GROWING code:
+it is a version control : how does it save and how it works and where it works
+git is a version controller that means  it stores the snapshot of code and executable when it is instructed to : so achieving previous versions can be implemented in the same
+codebase without creating diff folders for each version.
+whatsapp : it is to be a paid application at the beginning it uses sms technology with internet and only used for mssging : after it become free and sms control was removed
+depend upon the internet : pictures - videos - call- video call- grouped- payment
+
+life cycle of whatsapp : 8 to 9 they still use the same codebase they made changes to the codebase: old code gets modified so git - keeps the current generally keytake a snapshot: store it then the make changes to the data : rollback to the previous step : git is necessary for roll backs : saving current progress : and maintaining diff feature addition at the same time : git is only applicable for local storage.
+
+remote repository: git creates a local repo , github created a  remote repo: we just copy the content of local repo to the remote and vice-versa, no git happends in remote repo
+eg of remote repo is github.
+
+how to convert a project into github:
