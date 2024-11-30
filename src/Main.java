@@ -4,7 +4,7 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+    public  static void ComputerWage(){
         Scanner sc=new Scanner(System.in);
 
         System.out.println("Enter employee name");
@@ -47,5 +47,9 @@ public class Main {
 
         }
         System.out.println("Total wage :"+e1.totalWage +" and total working hours :"+ e1.totalHours);
+    }
+
+    public static void main(String[] args) {
+        ComputerWage();
     }
 }
