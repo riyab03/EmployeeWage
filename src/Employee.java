@@ -1,25 +1,53 @@
 import java.util.Random;
 import java.util.Scanner;
 
+//EmpWageBuilder has array of many
+//CompanyEmpWage Object
+class EmpWageBuilder{
+    int n,i=0;
+    Employee[] companies;
+
+    EmpWageBuilder(int n){
+        this.n=n;
+        companies=new Employee[n];
+        this.i=0;
+    }
+
+    public void addCompany(String name,int sal,int mon,int mHours){
+        companies[i++]=new Employee(name,sal,mon,mHours);
+    }
+
+    public  void ComputeWage(){
+        Scanner sc=new Scanner(System.in);
+        int i=0;
+        do {
+            System.out.println("Enter Company name");
+            String name=sc.next();
+            System.out.println("Enter salary per hour");
+            int salperhour=sc.nextInt();
+            System.out.println("Enter number of working days per month");
+            int monthworkday=sc.nextInt();
+            System.out.println("Enter total working hours");
+            int maxHours=sc.nextInt();
+            addCompany(name,salperhour,monthworkday,maxHours);
+            companies[i].compute();
+            i++;
+        }while(i<n);
+    }
+
+}
+
+
+
 public class Employee {
     Scanner sc=new Scanner(System.in);
-    //Employee name
-    String name;
-    //Employee id
-    int id;
-    //Employee attendance: true/false
-    boolean attendance;
-    //number of daily work day
-    int normalWorkday=0;
-    //Salary per Hour
-    int salperhour=20;
-    //Daily Salary
-    double dailySalary=0;
-    //number of working days per month
-    int monthworkday=20;
-//    double MonthlySalary=0;
-    //total working hours
-    int maxHours=100;
+    String name;  //Employee name
+    boolean attendance;//Employee attendance: true/false
+    int normalWorkday=0;//number of daily work day
+    int salperhour=20;//Salary per Hour
+    double dailySalary=0; //Daily Salary
+    int monthworkday=20; //number of working days per month
+    int maxHours=100;//total working hours
 
     int workingHours=0;
     int wageTillCon=0;
@@ -27,9 +55,8 @@ public class Employee {
     int totalHours=0;
 
     //method for taking input : name,id,sal per hr,working days/month,total working days
-    Employee(String name,int id,int sal,int mon,int mHours){
+    Employee(String name,int sal,int mon,int mHours){
         this.name=name;
-        this.id=id;
         this.salperhour=sal;
         this.monthworkday=mon;
         this.maxHours=mHours;
@@ -60,17 +87,12 @@ public class Employee {
         }
     }
 
-//    public void calMonthlyWage(){
-//        MonthlySalary+=dailySalary;
-//    }
 
     //calculating wage till condition of total working hrs or days is reached for a month
     public void calWageTillCond(){
         wageTillCon=workingHours*salperhour;
         totalWage+=wageTillCon;
     }
-
-
 
     public void compute(){
         for(int tillHours=0,day=0;day<monthworkday && tillHours<=maxHours;day++,tillHours+=workingHours) {
@@ -95,25 +117,11 @@ public class Employee {
                 }
             }
             calDailyWage(day);
-//            e1.calMonthlyWage();
             calWageTillCond();
             totalHours=(tillHours+workingHours);
-            System.out.println(" total working hours till now :"+totalHours);
+//            System.out.println(" total working hours till now :"+totalHours);
         }
-        System.out.println("Total wage :"+totalWage +" and total working hours :"+ totalHours);
+        System.out.println("Total wage :"+totalWage);
 
     }
-
-
-
-
-
-//    Employee(String n,int a,int salperhour,int monthworkday,int maxHours){
-//        this.name=n;
-//        this.id=a;
-//        this.salperhour=salperhour;
-//        this.monthworkday=monthworkday;
-//        this.maxHours=maxHours;
-//    }
-
 }
