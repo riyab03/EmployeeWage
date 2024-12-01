@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -51,10 +52,10 @@ class Employee {
     double dailySalary = 0; //Daily Salary
     int monthworkday = 20; //number of working days per month
     int maxHours = 100;//total working hours
-
     int workingHours = 0;
     int totalWage = 0;
 
+    HashMap<String,Integer>StoreTotalWage=new HashMap<>();
 
     //method for taking input : name,id,sal per hr,working days/month,total working days
     Employee(String name, int sal, int mon, int mHours) {
@@ -80,10 +81,10 @@ class Employee {
     public void calDailyWage(int i) {
         if (attendance) {
             dailySalary = workingHours * salperhour;
-            System.out.println(" Salary for day " + (i + 1) + " is: " + dailySalary);
+            System.out.println(" Daily Wage for day " + (i + 1) + " is: " + dailySalary);
         } else {
             dailySalary = 0;
-            System.out.println(" Salary for day " + (i + 1) + " is: " + dailySalary);
+            System.out.println(" Daily Wage for day " + (i + 1) + " is: " + dailySalary);
         }
     }
 
@@ -113,6 +114,7 @@ class Employee {
             totalHours += workingHours;
             totalWage+=dailySalary;
         }System.out.println("Total Wage "+totalWage);
+        StoreTotalWage.put(name,totalWage);
     }
 
     @Override
