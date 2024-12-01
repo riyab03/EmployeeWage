@@ -5,9 +5,12 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int a=sc.nextInt();
-        EmpWageBuilder e=new EmpWageBuilder(a);
-        e.ComputeWage();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of companies: ");
+        int n = sc.nextInt();
+        EmpWageBuilder e=new EmpWageBuilder(n);
+        for (int i = 0; i < n; i++) {
+            e.ComputeWage();
+        }
     }
 }
