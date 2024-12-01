@@ -15,6 +15,8 @@ interface EmpWage {
 class EmpWageBuilder implements EmpWage {
     int n, index = 1;
    ArrayList<Employee> companies= new ArrayList<>();
+    HashMap<String,Integer>StoreTotalWage=new HashMap<>();
+
 
     public void addCompany(String name, int sal, int mon, int mHours) {
         Employee e=new Employee(name, sal, mon, mHours);
@@ -23,7 +25,7 @@ class EmpWageBuilder implements EmpWage {
 
     public void ComputeWage() {
         Scanner sc = new Scanner(System.in);
-        int i=1;
+        int i=1,j=0;
         do {
             System.out.println("Enter Company name");
             String name = sc.next();
@@ -34,14 +36,22 @@ class EmpWageBuilder implements EmpWage {
             System.out.println("Enter total working hours");
             int maxHours = sc.nextInt();
             addCompany(name, salperhour, monthworkday, maxHours);
-            for (Employee company : companies) {
-                company.computeWage();
-                System.out.println(company);
-            }
+            Employee company=companies.get(j++);
+            company.computeWage();
+            System.out.println(company);
+            StoreTotalWage.put(company.name,company.totalWage);
+            System.out.println("-----------------------------------------------------------------");
             System.out.println("For continue, enter 1. To exit, enter 0:");
             i=sc.nextInt();
         }while(i!=0);
     }
+
+
+    int displayWage(String s){
+        System.out.println("Total Wage of "+s+" is :"+StoreTotalWage.get(s));
+        return StoreTotalWage.get(s);
+    }
+
 }
 
 
@@ -54,8 +64,6 @@ class Employee {
     int maxHours = 100;//total working hours
     int workingHours = 0;
     int totalWage = 0;
-
-    HashMap<String,Integer>StoreTotalWage=new HashMap<>();
 
     //method for taking input : name,id,sal per hr,working days/month,total working days
     Employee(String name, int sal, int mon, int mHours) {
@@ -114,7 +122,7 @@ class Employee {
             totalHours += workingHours;
             totalWage+=dailySalary;
         }System.out.println("Total Wage "+totalWage);
-        StoreTotalWage.put(name,totalWage);
+        System.out.println("-----------------------------------------------------------------");
     }
 
     @Override

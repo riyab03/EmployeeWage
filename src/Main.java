@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,5 +9,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         EmpWageBuilder e=new EmpWageBuilder();
         e.ComputeWage();
+        e.displayWage("GEV");
+        e.displayWage("GEH");
+
     }
 }
