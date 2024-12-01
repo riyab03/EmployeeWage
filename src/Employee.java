@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,32 +12,34 @@ interface EmpWage {
 //EmpWageBuilder has array of many
 //CompanyEmpWage Object
 class EmpWageBuilder implements EmpWage {
-    int n, index = 0;
-    Employee[] companies;
-
-    EmpWageBuilder(int n) {
-        companies = new Employee[n];
-    }
+    int n, index = 1;
+   ArrayList<Employee> companies= new ArrayList<>();
 
     public void addCompany(String name, int sal, int mon, int mHours) {
-        companies[index++] = new Employee(name, sal, mon, mHours);
-
+        Employee e=new Employee(name, sal, mon, mHours);
+        companies.add(e);
     }
 
     public void ComputeWage() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Company name");
-        String name = sc.next();
-        System.out.println("Enter salary per hour");
-        int salperhour = sc.nextInt();
-        System.out.println("Enter number of working days per month");
-        int monthworkday = sc.nextInt();
-        System.out.println("Enter total working hours");
-        int maxHours = sc.nextInt();
-        addCompany(name, salperhour, monthworkday, maxHours);
-        Employee company = companies[index - 1];
-        company.computeWage();
-        System.out.println(company);
+        int i=1;
+        do {
+            System.out.println("Enter Company name");
+            String name = sc.next();
+            System.out.println("Enter salary per hour");
+            int salperhour = sc.nextInt();
+            System.out.println("Enter number of working days per month");
+            int monthworkday = sc.nextInt();
+            System.out.println("Enter total working hours");
+            int maxHours = sc.nextInt();
+            addCompany(name, salperhour, monthworkday, maxHours);
+            for (Employee company : companies) {
+                company.computeWage();
+                System.out.println(company);
+            }
+            System.out.println("For continue, enter 1. To exit, enter 0:");
+            i=sc.nextInt();
+        }while(i!=0);
     }
 }
 

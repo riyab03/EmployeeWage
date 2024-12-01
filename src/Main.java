@@ -6,11 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of companies: ");
-        int n = sc.nextInt();
-        EmpWageBuilder e=new EmpWageBuilder(n);
-        for (int i = 0; i < n; i++) {
-            e.ComputeWage();
-        }
+        EmpWageBuilder e=new EmpWageBuilder();
+        e.ComputeWage();
     }
 }
