@@ -27,17 +27,12 @@ public class Employee {
     int totalHours=0;
 
     //method for taking input : name,id,sal per hr,working days/month,total working days
-    public void input(){
-        System.out.println("Enter employee name");
-        name=sc.next();
-        System.out.println("Enter employee id");
-        id=sc.nextInt();
-        System.out.println("Enter salary per hour");
-        salperhour=sc.nextInt();
-        System.out.println("Enter number of working days per month");
-        monthworkday=sc.nextInt();
-        System.out.println("Enter total working hours");
-        maxHours=sc.nextInt();
+    Employee(String name,int id,int sal,int mon,int mHours){
+        this.name=name;
+        this.id=id;
+        this.salperhour=sal;
+        this.monthworkday=mon;
+        this.maxHours=mHours;
     }
 
 
